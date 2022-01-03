@@ -25,6 +25,7 @@ module "nat" {
   private_subnets_cidr_blocks = module.vpc.private_subnets_cidr_blocks
   private_route_table_ids     = module.vpc.private_route_table_ids
   key_name                    = var.nat_instance_key_name
+  instance_types              = ["t3.nano"]
 }
 
 resource "aws_eip" "nat" {
